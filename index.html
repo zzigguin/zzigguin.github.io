@@ -3,39 +3,25 @@ layout: default
 title: 고흥닷컴
 ---
 <div class="col">
+  <h1 class="sr">고흥닷컴</h1>
   <section class="intro">
-    <h1>고흥닷컴</h1>
     <p>{{ site.description }}</p>
   </section>
 
-  <section class="stack" aria-label="시리즈">
-    {% for s in site.data.series %}
-    {% assign n = site.categories[s.slug].size | default: 0 %}
-    <div class="paper layered tint s-{{ s.slug }}">
-      <a class="series-link" href="{{ s.url | relative_url }}">
-        <h2>{{ s.title }}</h2>
-        <p>{{ s.desc }}</p>
-        <span class="count">{% if n > 0 %}{{ n }}편{% else %}곧 시작합니다{% endif %}</span>
-      </a>
-    </div>
+  {% if site.posts.size > 0 %}
+  <ul class="posts big">
+    {% for post in site.posts limit: 12 %}
+    {% assign slug = post.categories | first %}
+    {% assign s = site.data.series | where: "slug", slug | first %}
+    <li class="s-{{ slug }}">
+      <span class="meta">{{ s.title }}, {{ post.date | date: "%Y년 %-m월 %-d일" }}</span>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <p class="excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 110 }}</p>
+    </li>
     {% endfor %}
-  </section>
-
-  <section class="section">
-    <h2>최근 글</h2>
-    {% if site.posts.size > 0 %}
-    <ul class="posts">
-      {% for post in site.posts limit: 20 %}
-      {% assign slug = post.categories | first %}
-      {% assign s = site.data.series | where: "slug", slug | first %}
-      <li class="s-{{ slug }}">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        <span class="meta">{{ s.title }}, {{ post.date | date: "%Y년 %-m월 %-d일" }}</span>
-      </li>
-      {% endfor %}
-    </ul>
-    {% else %}
-    <p class="empty">아직 올라온 글이 없습니다. 첫 글이 올라오면 이곳에 표시됩니다.</p>
-    {% endif %}
-  </section>
+  </ul>
+  <p class="more"><a href="{{ '/archive/' | relative_url }}">전체 글 보기</a></p>
+  {% else %}
+  <p class="empty">아직 올라온 글이 없습니다. 첫 글이 올라오면 이곳에 표시됩니다.</p>
+  {% endif %}
 </div>

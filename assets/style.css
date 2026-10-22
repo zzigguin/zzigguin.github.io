@@ -48,9 +48,9 @@ a { color: var(--link); text-underline-offset: 3px; }
 .nav-link:hover, .nav-link.is-active { color: var(--text); border-bottom-color: var(--s); }
 
 /* 소개 */
-.intro { padding: 40px 0 28px; }
-.intro h1 { margin: 0 0 8px; font-size: 2.3rem; line-height: 1.25; font-weight: 800; }
-.intro p { margin: 0; color: var(--muted); font-size: 1.05rem; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.intro { padding: 30px 0 22px; }
+.intro p { margin: 0; color: var(--muted); font-size: 1.02rem; }
 
 /* 겹쳐진 종이: 앞장 위에 뒷장 두 장이 깔려 있는 모양 */
 .stack { display: grid; gap: 22px; isolation: isolate; }
@@ -85,6 +85,12 @@ a { color: var(--link); text-underline-offset: 3px; }
 .posts a { color: var(--text); font-weight: 700; text-decoration: none; }
 .posts a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .posts .meta { font-size: .85rem; color: var(--muted); }
+.posts.big { gap: 16px; }
+.posts.big li { padding: 18px 22px; gap: 4px; }
+.posts.big a { font-size: 1.2rem; line-height: 1.5; }
+.posts.big .meta { order: -1; }
+.posts .excerpt { margin: 2px 0 0; font-size: .95rem; line-height: 1.7; color: var(--text); }
+.more { margin: 22px 0 0; font-weight: 700; }
 .empty { color: var(--muted); margin: 0; }
 
 /* 시리즈 페이지, 글 머리 */
@@ -126,4 +132,5 @@ a { color: var(--link); text-underline-offset: 3px; }
 
 /* 맺음말 */
 .foot { padding: 56px 0 40px; color: var(--muted); font-size: .9rem; }
+.foot .col { display: flex; flex-wrap: wrap; gap: 6px 22px; }
 .foot a { color: var(--muted); }
