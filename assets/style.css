@@ -136,3 +136,12 @@ a { color: var(--link); text-underline-offset: 3px; }
 .foot { padding: 56px 0 40px; color: var(--muted); font-size: .9rem; }
 .foot .col { display: flex; flex-wrap: wrap; gap: 6px 22px; }
 .foot a { color: var(--muted); }
+
+/* 글 안의 막대 그래프 */
+.body .bars { margin: 1.2em 0 1.6em; }
+.body .bar-row { display: flex; align-items: center; gap: 10px; margin: 6px 0; font-size: .9rem; }
+.body .bar-label { flex: 0 0 3.2em; color: var(--text); }
+.body .bar-track { flex: 1; min-width: 0; }
+.body .bar { height: 18px; border-radius: 3px; background: var(--s, #C9DFF0); }
+.body .bar-val { flex: 0 0 4.6em; text-align: right; font-variant-numeric: tabular-nums; }
+.body .bar-caption { margin: 1.2em 0 .2em; font-weight: 600; }
