@@ -3,29 +3,38 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071B30">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23071B30'/%3E%3Ccircle cx='21' cy='11' r='5' fill='%23F5B31B'/%3E%3Cpath d='M3 23c4-4 7 3 11 0s7 3 15-1v10H3z' fill='%230A8F9C'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   {% seo %}
   {% feed_meta %}
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
 <body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+
   <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      <nav>
+    <div class="bar">
+      <a class="brand" href="{{ '/' | relative_url }}">고흥닷컴</a>
+      <nav aria-label="시리즈">
         {% for s in site.data.series %}
-        <a href="{{ s.url | relative_url }}"{% if page.series == s.slug or page.url == s.url %} class="on"{% endif %}>{{ s.title }}</a>
+        <a class="nav-link s-{{ s.slug }}{% if page.series == s.slug or page.categories contains s.slug %} is-active{% endif %}" href="{{ s.url | relative_url }}">{{ s.title }}</a>
         {% endfor %}
       </nav>
     </div>
   </header>
 
-  <main class="wrap">
+  <main id="main">
     {{ content }}
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <p>{{ site.title }} · <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
+    <div class="inner">
+      <a class="brand" href="{{ '/' | relative_url }}">고흥닷컴</a>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS로 구독하기</a>
     </div>
   </footer>
 </body>
