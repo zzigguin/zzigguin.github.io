@@ -6,7 +6,6 @@ lang: ko
 timezone: Asia/Seoul
 
 permalink: /posts/:year/:month/:day/:title/
-paginate: 0
 future: false
 
 plugins:
