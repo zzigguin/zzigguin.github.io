@@ -1,0 +1,21 @@
+---
+layout: default
+---
+{% assign s = site.data.series | where: "slug", page.series | first %}
+<section class="series">
+  <h1>{{ s.title }}</h1>
+  <p class="lede">{{ s.desc }}</p>
+  {% assign items = site.categories[page.series] %}
+  {% if items and items.size > 0 %}
+  <ul class="post-list">
+    {% for post in items %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty">아직 올라온 글이 없습니다.</p>
+  {% endif %}
+</section>

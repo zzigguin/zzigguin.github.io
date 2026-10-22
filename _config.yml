@@ -1,0 +1,34 @@
+title: 고흥닷컴
+description: 고흥군 조례를 읽고, 통계를 풀고, 소식을 정리합니다.
+url: https://www.gohng.com
+baseurl: ""
+lang: ko
+timezone: Asia/Seoul
+
+permalink: /posts/:year/:month/:day/:title/
+paginate: 0
+future: false
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - scripts
+  - vendor

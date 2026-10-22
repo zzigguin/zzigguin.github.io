@@ -1,0 +1,12 @@
+- slug: ordinance
+  title: 고흥군 조례 읽기
+  desc: 고흥군 조례를 가나다순으로 한 편씩 읽고, 시행규칙까지 함께 살펴봅니다.
+  url: /ordinance/
+- slug: stats
+  title: 고흥 통계
+  desc: 숫자로 보는 고흥의 인구, 산업, 생활을 깊이 있게 풉니다.
+  url: /stats/
+- slug: briefing
+  title: 고흥 브리핑
+  desc: 고흥 소식을 매일 아침 주제별로 정리합니다.
+  url: /briefing/
