@@ -3,17 +3,17 @@ layout: default
 ---
 {% assign slug = page.categories | first %}
 {% assign s = site.data.series | where: "slug", slug | first %}
-<article class="s-{{ slug }}">
-  <header class="band post-band">
-    <div class="inner">
-      {% if s %}<a class="chip" href="{{ s.url | relative_url }}">{{ s.title }}</a>{% endif %}
-      <h1>{{ page.title }}</h1>
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y년 %-m월 %-d일" }}</time>
-    </div>
+<article class="col s-{{ slug }}">
+  <header class="head">
+    {% if s %}<a class="chip" href="{{ s.url | relative_url }}">{{ s.title }}</a>{% endif %}
+    <h1>{{ page.title }}</h1>
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y년 %-m월 %-d일" }}</time>
   </header>
-  <div class="content">
-    <div class="body">
-      {{ content }}
+  <div class="stack">
+    <div class="paper layered backed">
+      <div class="body">
+        {{ content }}
+      </div>
     </div>
   </div>
 </article>
