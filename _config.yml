@@ -6,7 +6,7 @@ lang: ko
 timezone: Asia/Seoul
 
 permalink: /posts/:year/:month/:day/:title/
-future: false
+future: true
 
 plugins:
   - jekyll-feed
