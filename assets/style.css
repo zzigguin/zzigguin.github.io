@@ -17,7 +17,6 @@
 .s-ordinance { --s: #C9DFF0; --s2: #E3EFF8; }
 .s-stats     { --s: #F7E7B0; --s2: #FBF2D3; }
 .s-briefing  { --s: #F5CFD3; --s2: #FAE5E7; }
-.s-stupa     { --s: #CFE6D2; --s2: #E6F2E7; }
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
