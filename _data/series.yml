@@ -10,3 +10,7 @@
   title: 고흥 브리핑
   desc: 고흥 소식을 매일 아침 주제별로 정리합니다.
   url: /briefing/
+- slug: stupa
+  title: 석탑 읽기
+  desc: 국가유산으로 지정된 석탑을 하루에 한 기씩 읽고, 구조와 양식, 지금의 보존 상황까지 살펴봅니다.
+  url: /stupa/
